@@ -8,39 +8,39 @@ function draw() {
   translate(200, 200);
   rotate(-90);
 
-  let sc = second();
-  let mn = minute();
-  let hr = hour();
+  const sc = second();
+  const mn = minute();
+  const hr = hour();
 
   strokeWeight(8);
   noFill();
 
   stroke(255, 100, 15);
-  let secondArc = map(sc, 0, 60, 0, 360);
-  arc(0, 0, 300, 300, 0, secondArc);
+  const secondAngle = map(sc, 0, 60, 0, 360);
+  arc(0, 0, 300, 300, 0, secondAngle);
 
   stroke(255, 200, 15);
-  let minuteArc = map(mn, 0, 60, 0, 360);
-  arc(0, 0, 280, 280, 0, minuteArc);
+  const minuteAngle = map(mn, 0, 60, 0, 360);
+  arc(0, 0, 280, 280, 0, minuteAngle);
 
   stroke(200, 10, 110);
-  let hourArc = map(hr % 12, 0, 12, 0, 360);
-  arc(0, 0, 260, 260, 0, hourArc);
+  const hourAngle = map(hr % 12, 0, 12, 0, 360);
+  arc(0, 0, 260, 260, 0, hourAngle);
 
   push();
-  rotate(secondArc);
+  rotate(secondAngle);
   stroke(2255, 100, 155);
   line(0, 0, 100, 0);
   pop();
 
   push();
-  rotate(minuteArc);
+  rotate(minuteAngle);
   stroke(255, 200, 15);
   line(0, 0, 90, 0);
   pop();
 
   push();
-  rotate(hourArc);
+  rotate(hourAngle);
   stroke(200, 10, 110);
   line(0, 0, 80, 0);
   pop();
